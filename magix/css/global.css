@@ -1,0 +1,80 @@
+* {
+	padding:0;
+	margin:0;
+}
+
+html, body {
+	font-family:Verdana;
+}
+
+h1 {
+	color:#333;
+	font-size:16px;
+	text-align:center;
+	margin-bottom:25px;
+	margin-top:15px;
+}
+
+.clear {
+	clear:both;
+}
+
+.formLabel {
+	float:left;
+	width:180px;
+	text-align:right;
+	padding-right:5px;
+}
+
+.formInput {
+	float:left;
+	width:180px;
+}
+
+.formSeparator {
+	clear:both;
+	height:10px;
+}
+
+.sectionAuthentification {
+	width:400px;
+	margin:250px auto;
+	border-radius: 25px;
+	border:4px ridge #E53913;
+	padding:10px;
+	box-shadow: #ffffff 10px 20px 20px 0px;	
+	background-color: rgba(255,255,255,0.6);
+	
+}
+.sectionAuthentification input[type=image] {
+	border: 2px solid #E3E5F3;
+	
+	margin-left: 50px;
+	padding: 3px 10px;
+  background: #E53913;
+  border-radius: 99px;
+  box-shadow: #000000 10px 20px 20px -10px;
+
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: 0 solid transparent;
+  width: fit-content;
+
+
+}
+
+#informationBox {
+	border-radius: 10px;
+	border:2px solid #777;
+	background-color:#bbf;
+	width:300px;
+	height:50px;
+	padding:10px;
+}
+
+#index{
+	background-image: url("../images/login2.jpg");
+	background-size: cover;
+	background-position: middle;
+	background-repeat: no-repeat;
+}
