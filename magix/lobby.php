@@ -1,6 +1,7 @@
 <?php
 require_once("action/lobbyaction.php");
-$data = execute();
+$action = new LobbyAction();
+$data =$action->execute();
 
 $pageid = "lobby";
 
@@ -16,7 +17,16 @@ require_once("partial/header.php");
     <button>Quitter</button>
 </div>
 
-<div id="dialog"></div>
+<div id="dialog">
+</div>
+
+<div>
+<iframe style="width:700px;height:240px;" 
+        src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>"
+</iframe>
+</div>
+
+
 <div id="lobbychat"></div>
 </body>
 </html>

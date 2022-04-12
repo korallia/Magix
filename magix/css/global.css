@@ -110,7 +110,7 @@ h1 {
 	bottom: 20px;
 	text-align: center;
 }
-.dialogimage{
+.dialogimageFadeIn{
 	height: 450px;
 	opacity: 1;
 	animation-name: fadeInOpacity;
@@ -120,7 +120,9 @@ h1 {
 	
 
 }
-.dialogtext{
+
+
+.dialogtextFadeIN{
 	background-color: white;
 	width: 40%;
 	margin:25px auto;

@@ -1,6 +1,8 @@
 <?php
-require_once("action/indexaction.php");
-$data = execute();
+require_once("action/indexAction.php");
+$action = new IndexAction();
+$data =$action->execute();
+
 
 $pageid = "index";
 
@@ -14,8 +16,9 @@ require_once("partial/header.php");
 			<h1>
 				Connectez-vous, si vous en avez le courage
 			</h1>
+
 			<?php
-			 if ($data["hasConnectionError"]){
+			 if ($data["error"]){
 				 ?>
 				 <div style="color:red;border:1px solid red">
 				 Connexion erronée!
@@ -24,9 +27,9 @@ require_once("partial/header.php");
 			 }
 			 ?>
 
-
-			 
-			<form action="" method="post">
+			
+		
+		<form action="" method="post">
 				<div class="formLabel"><label for="usager"> Nom d'usager : </label></div>
 				<div class="formInput"><input type="text" name="usager" /></div>
 				<div class="formSeparator"></div>
