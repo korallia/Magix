@@ -78,3 +78,75 @@ h1 {
 	background-position: middle;
 	background-repeat: no-repeat;
 }
+#lobby{
+	background-image: url("../images/lobby.png");
+	background-size: cover;
+	background-position: middle;
+	background-repeat: no-repeat;
+}
+
+.lobbybuttons{
+	margin: 20px auto;
+	width: 200px;
+
+}
+#lobbychat{
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	width: 300px;
+	height: 400px;
+	background-color: #333;
+}
+#dialogs{
+	display: none;
+}
+
+#dialog{
+
+	width: 50%;
+	height: 600px;
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+}
+.dialogimage{
+	height: 450px;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+	
+
+}
+.dialogtext{
+	background-color: white;
+	width: 40%;
+	margin:25px auto;
+	padding: 5px 30px;
+	border: #777 solid 2px;
+	border-radius: 75px;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+#batgif{
+	position: absolute;
+	display: block;
+	top: 10%;
+	left: 10%;
+
+
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

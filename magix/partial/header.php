@@ -5,4 +5,4 @@
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body id="<?= $pageid? $pageid:"page"?>">
-		<div class="sectionAuthentification">
+  

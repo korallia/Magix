@@ -1,13 +1,16 @@
 <?php
 require_once("action/indexaction.php");
 $data = execute();
-//$data = dictionnaire
 
 $pageid = "index";
 
 require_once("partial/header.php");
 ?>
+<script src="js/index.js" defer></script>
 
+<div id="batgif">
+    <img src="images/bat-vampire-flying.gif"  /></div>
+		<div class="sectionAuthentification">
 			<h1>
 				Connectez-vous, si vous en avez le courage
 			</h1>
@@ -20,6 +23,9 @@ require_once("partial/header.php");
 			 <?php
 			 }
 			 ?>
+
+
+			 
 			<form action="" method="post">
 				<div class="formLabel"><label for="usager"> Nom d'usager : </label></div>
 				<div class="formInput"><input type="text" name="usager" /></div>
@@ -32,6 +38,11 @@ require_once("partial/header.php");
 				<div class="formInput"><input type="image" src="images/sword.png" /></div>
 				<div class="formSeparator"></div>
 			</form>
+
+			
+				
+			
+
 		<?php
 			require_once("partial/footer.php")
 		?>
