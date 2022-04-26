@@ -1,0 +1,299 @@
+* {
+	padding:0;
+	margin:0;
+}
+
+html, body {
+	font-family:Verdana;
+}
+
+h1 {
+	color:#333;
+	font-size:16px;
+	text-align:center;
+	margin-bottom:25px;
+	margin-top:15px;
+}
+
+.clear {
+	clear:both;
+}
+
+.formLabel {
+	float:left;
+	width:180px;
+	text-align:right;
+	padding-right:5px;
+}
+
+.formInput {
+	float:left;
+	width:180px;
+}
+
+.formSeparator {
+	clear:both;
+	height:10px;
+}
+
+.sectionAuthentification {
+	width:400px;
+	margin:250px auto;
+	border-radius: 25px;
+	border:4px ridge #E53913;
+	padding:10px;
+	box-shadow: #ffffff 10px 20px 20px 0px;	
+	background-color: rgba(255,255,255,0.6);
+	
+}
+.sectionAuthentification input[type=image] {
+	border: 2px solid #E3E5F3;
+	
+	margin-left: 50px;
+	padding: 3px 10px;
+  background: #E53913;
+  border-radius: 99px;
+  box-shadow: #000000 10px 20px 20px -10px;
+
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: 0 solid transparent;
+  width: fit-content;
+
+
+}
+
+#informationBox {
+	border-radius: 10px;
+	border:2px solid #777;
+	background-color:#bbf;
+	width:300px;
+	height:50px;
+	padding:10px;
+}
+
+#index{
+	background-image: url("../images/login2.jpg");
+	background-size: cover;
+	background-position: middle;
+	background-repeat: no-repeat;
+}
+#lobby{
+	background-image: url("../images/lobby.png");
+	background-color: #1E130D;
+	background-size: cover;
+	background-position: middle;
+	background-repeat: no-repeat;
+	
+}
+
+.lobbybuttons{
+	margin: 0px auto;
+	position: absolute;
+	bottom: 2vh;
+	margin-left: 5vw;
+	
+
+}
+.lobbybuttons button{
+	border: 2px solid #E3E5F3;
+	
+	margin-left: 5vw;
+	padding: 4px 3vw;
+  background: #E53913;
+  border-radius: 99px;
+  box-shadow: #000000 10px 20px 20px -10px;
+width: 15vw;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: 0 solid transparent;
+  font-size: 2vw;
+
+
+}
+#lobbychat{
+	/*position: absolute;
+	top: 40px;
+	right: 40px;
+	*/
+	width: 30vw;
+	height: 75vh;
+	float: right;
+	margin-right: 40px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	background-color: rgba(30, 30, 30, 0.5);
+}
+#dialogs{
+	display: none;
+}
+
+#dialog{
+
+	width: 50vw;
+	height: 60vh;
+		top: 40px;
+	text-align: center;
+	float: left;
+	margin-top: 40px;
+	margin-left: 40px;
+}
+
+.dialogimage{
+	max-width: 50vw;
+	max-height: 50vh;
+	opacity: 1;
+	animation: showme;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	animation-duration: 10s;
+	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8), 0 6px 20px 0 rgba(255, 255, 255, 0.69);
+
+}
+.dialogtext{
+	background-color: rgba(255, 255, 255, 0.75);
+	width: 40%;
+	margin:25px auto;
+	padding: 5px 30px;
+	border: #777 solid 2px;
+	border-radius: 75px;
+	opacity: 1;
+	animation: showme;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	animation-duration: 10s;
+	
+}
+
+#batgif{
+	position: absolute;
+	display: block;
+	top: 10%;
+	left: 10%;
+
+
+}
+
+@keyframes showme {
+	0% {
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	80%{
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+
+#arena{
+	background-image: url("../images/arena.png");
+	background-color: #1E130D;
+	background-size: cover;
+	background-position: middle;
+	background-repeat: no-repeat;
+	
+}
+
+#game{
+	min-height: 640px;
+	width: 80%;
+	display: block;
+	
+}
+#game iframe{
+	min-height: 640px;
+}
+#hand{
+	display: flex;
+	flex-direction: row;
+}
+
+.card{
+	
+	
+	padding: 5px;
+	margin: 10px;
+	height: 12.2rem;
+	width: 8rem;
+	background-image: url("../images/CadreCarteV2.png");
+	background-size: cover;
+	background-position: middle;
+	background-repeat: no-repeat;
+	font-size: 0.8rem;
+	color: white;
+	
+}
+
+.mechanics{
+	font-size: 0.8em;
+	padding-left: 0.5rem;
+}
+.atk{
+	position: relative;
+	display: inline-block;
+	top: 11.3rem;
+	left: -0.4rem;
+	width: 2rem;
+	
+	
+}
+.hp{
+	position: relative;
+	display: inline-block;
+	width: 2rem;
+	top: 11.3rem;
+	left: 1.6rem;
+
+	
+}
+.cost{
+	position: relative;
+	display: inline-block;
+	
+	width: 2rem;
+	top: 0rem;
+	left: 7rem;
+	
+	
+	
+
+	
+}
+
+.title{
+	position: relative;
+	display: inline-block;
+	font-size: 0.8em;
+	
+	top: -1rem;
+	left: 0rem;
+	
+	
+}
+.image img{
+	position: relative;
+	display: inline-block;
+	top: -0.84rem;
+	left: 0.32rem;
+	
+	width: 7.4rem;
+}
+
+#deck{
+	min-height: 640px;
+	width: 80%;
+	display: block;
+	
+}
+#deck iframe{
+	min-height: 640px;
+}
+
+
