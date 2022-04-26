@@ -61,7 +61,7 @@ const create_card= card =>{
     let titlediv = document.createElement("div");
     titlediv.classList.add('title');
     
-    let text = document.createTextNode('Card #' + card.id);
+    let text = document.createTextNode('sadasdasasd');
     titlediv.appendChild(text);
     element.appendChild(titlediv);
   

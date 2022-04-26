@@ -224,9 +224,10 @@ width: 15vw;
 }
 
 #game{
-	min-height: 640px;
-	width: 80%;
+	min-height: 500px;
+	width: 100%;
 	display: block;
+	margin-top: 0;
 	
 }
 	
@@ -243,26 +244,69 @@ width: 15vw;
 .card{
 	
 	
-	padding: 5px;
+	padding: 5.7px;
 	margin: 10px;
 	height: 12.2rem;
 	width: 8rem;
 	background-image: url("../images/CadreCarteV2.png");
 	background-size: cover;
-	background-position: middle;
+	background-position: right;
 	background-repeat: no-repeat;
 	font-size: 0.8rem;
 	color: white;
+	/* text-align: center; */
+	
+}
+
+.cardEnemy{
+	
+	
+	padding: 5.7px;
+	margin: 10px;
+	height: 12.2rem;
+	width: 8rem;
+	background-image: url("../images/CadreCarteV2.png");
+	background-size: cover;
+	background-position: right;
+	background-repeat: no-repeat;
+	font-size: 0.8rem;
+	color: white;
+	/* text-align: center; */
 	
 }
 
 .handPlayer{
 	position: absolute;
 	bottom: 0;
-	margin-bottom: 5vh;
+	margin-bottom: 1vh;
+	margin-right: 50px;
 
 
 }
+
+.playerArea1{
+	margin-top: 0.3vh;
+	min-height: 225px;
+	width: 99%;
+	display: block;
+	border:rosybrown solid 2px;
+	margin-left: 0.5vh;
+	background-color: transparent;
+
+}
+
+.playerArea2{
+	min-height: 225px;
+	width: 99%;
+	display: block;
+	margin-bottom: -2.7vh;
+	border:rosybrown solid 2px;
+	margin-left: 0.5vh;
+	background-color: transparent;
+
+}
+
+
 
 
 

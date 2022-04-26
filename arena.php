@@ -11,13 +11,13 @@
     
 ?>
 <script src="js/global.js"></script>
-<script src="js/arena.js" defer></script>
+<script src="js/arena.js" defer></script> 
 
-
-<div id="game">
-
+<div class="playerArea1"> </div>
+<div id="game"></div>
+<div class="playerArea2"> 
     <div class = "handPlayer">
-        <div id="hand"></div>
+    <div id="hand"></div>
     </div>
 </div>
 
