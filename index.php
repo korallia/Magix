@@ -10,12 +10,17 @@ require_once("partial/header.php");
 ?>
 <script src="js/index.js" defer></script>
 
+
+
+<h1 class = "titreAcueil">MAGIX</h1>
+<h2>BIENVENU A VOTRE DOOM</h2>
+
 <div id="batgif">
     <img src="images/bat-vampire-flying.gif"  /></div>
 		<div class="sectionAuthentification">
-			<h1>
+			<h3>
 				Connectez-vous, si vous en avez le courage
-			</h1>
+			</h3>
 
 			<?php
 			 if ($data["error"]){

@@ -6,13 +6,11 @@
     $pageid = "arena";
     require_once("partial/header.php");
 ?>
-<h1>Page Privé!</h1>
+<h1>VOTRE DECK!</h1>
 
 <?php
     
 ?>
-<input type="text" id="result" value="pending...">
-<input type="hidden" id="type" value="<?=!empty($_GET['type'])?$_GET['type']:'pratique'?>">
 <script src="js/global.js"></script>
 <script src="js/arena.js" defer></script>
 <div id="deck">
@@ -20,9 +18,14 @@
 </iframe>
 </div>
 
+<div class="lobbybuttons">
+    <button onClick="demarrer('jouer');">Jouer</button>
+    <button onClick="demarrer('pratique');">Pratiquer</button>
+    <button onClick="window.location.href='lobby.php';">Lobby</button>
+    <button onClick="window.location.href='index.php';">Quitter</button>
+</div>
 
 
-    <button onClick="demarrer();">Demarrer</button>
     
 
 

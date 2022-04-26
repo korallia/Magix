@@ -6,17 +6,21 @@
     $pageid = "arena";
     require_once("partial/header.php");
 ?>
-<h1>Page Privé!</h1>
 
 <?php
     
 ?>
 <script src="js/global.js"></script>
 <script src="js/arena.js" defer></script>
+
+
 <div id="game">
 
-<div id="hand"></div>
+    <div class = "handPlayer">
+        <div id="hand"></div>
+    </div>
 </div>
+
 
 
 

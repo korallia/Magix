@@ -7,12 +7,34 @@ html, body {
 	font-family:Verdana;
 }
 
-h1 {
+h3 {
 	color:#333;
 	font-size:16px;
 	text-align:center;
 	margin-bottom:25px;
 	margin-top:15px;
+}
+
+h1{
+	color: whitesmoke;
+	text-align: center;
+	margin-top: 5vh;
+	font-size: 60px;
+	font-family: "Copperplate Gothic";
+	text-shadow: 2px 2px red;
+	
+}
+.titreAcueil{
+	text-shadow: 2px 2px black;
+}
+
+h2{
+	color: whitesmoke;
+	text-align: center;
+	margin-top: 1vh;
+	font-size: 30px;
+	font-family: "Copperplate Gothic";
+	text-shadow: 2px 2px red;
 }
 
 .clear {
@@ -38,7 +60,7 @@ h1 {
 
 .sectionAuthentification {
 	width:400px;
-	margin:250px auto;
+	margin:200px auto;
 	border-radius: 25px;
 	border:4px ridge #E53913;
 	padding:10px;
@@ -207,13 +229,16 @@ width: 15vw;
 	display: block;
 	
 }
-#game iframe{
-	min-height: 640px;
-}
+	
+
 #hand{
 	display: flex;
 	flex-direction: row;
+	
+
+	
 }
+
 
 .card{
 	
@@ -230,6 +255,17 @@ width: 15vw;
 	color: white;
 	
 }
+
+.handPlayer{
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 5vh;
+
+
+}
+
+
+
 
 .mechanics{
 	font-size: 0.8em;
@@ -287,13 +323,16 @@ width: 15vw;
 }
 
 #deck{
-	min-height: 640px;
+	min-height: 100%;
 	width: 80%;
 	display: block;
-	
+	margin-left: 20vh;
+	margin-top: 3vh;
 }
 #deck iframe{
 	min-height: 640px;
 }
+
+
 
 

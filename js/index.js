@@ -23,7 +23,7 @@ const tick = () => {
         
             break;
         case "down":
-            if ( y <= 520){
+            if ( y <= 700){
                 y = y + 20;
                 bat.style.top = y  + "px";
             }
@@ -43,7 +43,7 @@ const tick = () => {
         
             break;
         case "up":
-            if ( y >= 120){
+            if ( y >= 300){
                 y= y - 20;
                 bat.style.top = y  + "px";
             }
