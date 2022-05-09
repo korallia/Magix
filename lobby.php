@@ -4,7 +4,7 @@ $action = new LobbyAction();
 $data =$action->execute();
 
 $pageid = "lobby";
-
+$title= "Lobby";
 require_once("partial/header.php");
 
 ?>
@@ -25,7 +25,7 @@ require_once("partial/header.php");
 
 </div>
 
-<div class="lobbybuttons">
+<div class="menubuttons">
     <button onClick="demarrer('jouer');">Jouer</button>
     <button onClick="demarrer('pratique');">Pratiquer</button>
     <button onClick="window.location.href='deck.php';">Deck</button>

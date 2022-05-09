@@ -63,22 +63,3 @@ const tick = () => {
 }
 
 
-const applyStyles = iframe => {
-    let styles = {
-		fontColor : "#FFF",
-		backgroundColor : "rgba(255, 255, 255, 0.2)",
-		fontGoogleName : "Copperplate Gothic",
-		fontSize : "14px",
-		hideIcons : false,
-		inputBackgroundColor : "#cccccc",
-		inputFontColor : "#222222",
-		height : "100%",
-        width: "100%",
-		memberListFontColor : "#ff00dd",
-		memberListBackgroundColor : "#cccccc"
-	}
-	
-	setTimeout(() => {
-		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");	
-}, 100);
-}

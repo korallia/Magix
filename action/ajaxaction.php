@@ -18,9 +18,25 @@
                     $result['values'] = $this->callAPI('games/auto-match', ['key'=> $_SESSION['key'], 'type' => 'PVP']);
                     break;
                 case 'status':
-                        $result['values'] = $this->callAPI('games/state', ['key'=> $_SESSION['key']]);
-                        break;
-
+                    $result['values'] = $this->callAPI('games/state', ['key'=> $_SESSION['key']]);
+                    break;
+                case 'play':
+                    $result['values'] = $this->callAPI('games/action', ['key'=> $_SESSION['key'], 'type' => "PLAY", 'uid' => $_POST['uid']]);
+                    break;
+                case 'attack':
+                    $result['values'] = $this->callAPI('games/action', ['key'=> $_SESSION['key'], 'type' => "ATTACK", 'uid' => $_POST['uid'], 'targetuid' => $_POST['targetuid']]);
+                    break;
+                case 'heropower':
+                    $result['values'] = $this->callAPI('games/action', ['key'=> $_SESSION['key'], 'type' => "HERO_POWER"]);
+                    break;
+                case 'surrender':
+                    $result['values'] = $this->callAPI('games/action', ['key'=> $_SESSION['key'], 'type' => "SURRENDER"]);
+                    break;
+                case 'endturn':
+                    $result['values'] = $this->callAPI('games/action', ['key'=> $_SESSION['key'], 'type' => "END_TURN"]);
+                    break;
+            
+                    
                 case 'cardnames':
                         $result['values'] = [
                            1 => 'Brawler',
@@ -67,7 +83,7 @@
                             42 => 'Flyseyes',
                             43 => 'The Elder',
                             44 => 'Screaming Malphas',
-                            45 => 'Visitor',
+                            45 => 'Mad Diver',
                             46 => 'Sharma',
                             47 => 'Old witch',
                             48 => 'Greengrocer',
@@ -103,16 +119,16 @@
                             78 => 'Young Woman',
                             79 => 'Visitor',
                             80 => 'Jailed Hector',
-                            81 => '',
+                            81 => 'Dracula\'s castle',
                             82 => 'Cezar',
                             83 => 'Alucard\s sword',
-                            84 => 'Guard Captain',
+                            84 => 'Malachi',
                             85 => 'Infinite corridor key',
                             86 => 'Varney',
                             87 => 'Drunk Trevor',
                             88 => 'Buer',
                             89 => 'Mayor',
-                            90 => 'Guard',
+                            90 => 'Giant Bat',
                             91 => 'Mrs. Djuvara',
                             92 => 'Morana',
                             93 => 'The Bishop',

@@ -5,7 +5,7 @@ $data =$action->execute();
 
 
 $pageid = "index";
-
+$title= "Magix Login";
 require_once("partial/header.php");
 ?>
 <script src="js/index.js" defer></script>
