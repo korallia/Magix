@@ -1,8 +1,11 @@
 <?php
-    require_once("action/CommonAction.php");
+    require_once("CommonAction.php");
+    require_once("DAO/historiquePartiesDAO.php");
+
 
     class AjaxAction extends CommonAction {
 
+        
         public function __construct() {
             parent::__construct(CommonAction::$VISIBILITY_MEMBER);
         }
@@ -19,6 +22,27 @@
                     break;
                 case 'status':
                     $result['values'] = $this->callAPI('games/state', ['key'=> $_SESSION['key']]);
+                    
+                    
+                    if (isset($result['values']->opponent->username)){
+                        
+                            $_SESSION['remoteuser'] = $result['values']->opponent->username;
+                            $result['remoteuser']  = $_SESSION['remoteuser'] ;
+                            $result['localuser'] = $_SESSION["username"];
+                        
+                    }
+                    else if ( $result['values'] == 'LAST_GAME_LOST' && isset($_SESSION['remoteuser'])){
+                        historiquePartiesDAO::finDePartie($_SESSION["username"], $_SESSION['remoteuser'],$_SESSION['remoteuser'] );
+                        unset($_SESSION['remoteuser']);
+                    }
+                    else if  ( $result['values'] == 'LAST_GAME_WON' && isset($_SESSION['remoteuser'])){
+                        historiquePartiesDAO::finDePartie($_SESSION["username"], $_SESSION['remoteuser'],$_SESSION['username'] );
+                        unset($_SESSION['remoteuser']);
+                    }
+                        
+                    //}
+
+
                     break;
                 case 'play':
                     $result['values'] = $this->callAPI('games/action', ['key'=> $_SESSION['key'], 'type' => "PLAY", 'uid' => $_POST['uid']]);

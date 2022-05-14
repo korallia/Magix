@@ -3,7 +3,6 @@ require_once("action/indexAction.php");
 $action = new IndexAction();
 $data =$action->execute();
 
-
 $pageid = "index";
 $title= "Magix Login";
 require_once("partial/header.php");

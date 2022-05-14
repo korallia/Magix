@@ -27,6 +27,7 @@
 	// Pour voir les informations retournées : var_dump($result);exit;
 	        $key = $result->key;
             $_SESSION["key"] = $key;
+            $_SESSION["username"] = $_POST["usager"];
             $_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
             header("Location: ../Magix/lobby.php");
             exit();

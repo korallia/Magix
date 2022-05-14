@@ -1,4 +1,6 @@
 <?php
+
+    require_once("DAO/constants.php");
     session_start();
     
     abstract class CommonAction {

@@ -176,7 +176,7 @@ width: 15vw;
 	animation-timing-function: ease-in;
 	animation-fill-mode: forwards;
 	animation-duration: 10s;
-	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8), 0 6px 20px 0 rgba(255, 255, 255, 0.69);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
 
 }
 .dialogtext{
@@ -283,7 +283,10 @@ width: 15vw;
 }
 
 .removed{
-transform: scale(0.7,0.7) rotate(90deg);
+transform: rotate(9deg);
+
+background-image: url("../images/removedcard2.png");
+
 }
 
 .attacked{
@@ -634,7 +637,11 @@ transform: scale(0.7,0.7) rotate(90deg);
 
 
 }
+.opponentname{
 
+	margin-top: 20px;
+	margin-left: -30px;
+}
 
 .endturn button{
 	margin-top: 1rem;

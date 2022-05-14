@@ -31,6 +31,7 @@
             <div class="class"></div>
             <div class="talent"></div>
             <div class="cardhand"></div>
+            <div class="opponentname"></div>
         </div>
         <div class="stats">
             

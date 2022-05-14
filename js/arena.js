@@ -223,6 +223,9 @@ const update_game = data =>{
         const player1cardCount = document.querySelector(".playerArea1 .cardcount");
         const player2cardCount = document.querySelector(".playerArea2 .cardcount");
 
+        const player2opponent = document.querySelector(".opponentname");
+        player2opponent.innerHTML = data.values.opponent.username;
+
         
         const player1class = document.querySelector(".playerArea1 .class");
         if ( player1class.innerHTML == ""){
