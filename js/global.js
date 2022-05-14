@@ -23,6 +23,24 @@ const ajax_action = type => {
     */
 }
 
+
+const set_string_lookup = data =>{
+    console.log("GOT STRING LOOKUP");
+    console.log(data);
+    stringlookup = data.values;
+       
+}
+
+const translate_string = text =>{
+    if ( stringlookup.hasOwnProperty(text) ){
+        return stringlookup[text];
+    }
+    else{
+        return text;
+    }
+}
+
+
 const ajax_data = (type,data) => {
 
     let formData = new FormData();
@@ -52,11 +70,14 @@ const ajax_data = (type,data) => {
         else if ( type=="cardnames"){
             set_card_names(res);
         }
+        else if ( type=="stringlookup"){
+            set_string_lookup(res);
+        }
         else if ( type=="play"){
             if ( res && res.values && typeof res.values != "object"){
                 console.log(res.values);
                 if ( resultdiv && actiondiv){
-                    resultdiv.innerHTML = res.values;
+                    resultdiv.innerHTML = translate_string(res.values);
                     actiondiv.innerHTML = "Error playing card:";
                 }
                         
@@ -78,7 +99,7 @@ const ajax_data = (type,data) => {
         else if ( type=="attack"){
             if ( res && res.values && typeof res.values != "object"){
                 if ( resultdiv && actiondiv){
-                    resultdiv.innerHTML = res.values;
+                    resultdiv.innerHTML = translate_string(res.values);
                     actiondiv.innerHTML = "Error attacking:";
                 }
                 

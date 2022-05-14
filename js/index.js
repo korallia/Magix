@@ -1,5 +1,10 @@
 window.addEventListener("load", () => {
     console.log("window load");
+    document.querySelector("form").onsubmit = saveUsername;
+
+    let username = localStorage.getItem("username");
+    let input = document.querySelector("#usager");
+    input.value = username;
 
     tick();
 })
@@ -7,6 +12,14 @@ window.addEventListener("load", () => {
 var x = 20;
 var y = 120;
 var direction = "right";
+
+
+const saveUsername = () =>{
+    let input = document.querySelector("#usager");
+    let username = input.value;
+    localStorage.setItem("username", username);
+    return true;
+}
 
 const tick = () => {
     

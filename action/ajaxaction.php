@@ -35,6 +35,16 @@
                 case 'endturn':
                     $result['values'] = $this->callAPI('games/action', ['key'=> $_SESSION['key'], 'type' => "END_TURN"]);
                     break;
+
+                case 'stringlookup':
+                        $result['values'] = [
+                            "NOT_ENOUGH_ENERGY" => "Not enough energy to play this card",
+                            "WRONG_TURN" => "It is currently not your turn",
+                            "MUST_ATTACK_TAUNT_FIRST" => "Taunt cards must be attacked first",
+                            "CARD_NOT_IN_HAND" => "The card is no longer in your hand"
+                        ];
+
+                    break;
             
                     
                 case 'cardnames':

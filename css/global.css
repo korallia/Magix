@@ -117,7 +117,13 @@ h2{
 	
 
 }
-.menubuttons button{
+
+.deckmenubuttons{
+margin-bottom: 3vw;
+margin-left:  5vw;
+}
+
+.menubuttons button, .deckmenubuttons button{
 	border: 2px solid #E3E5F3;
 	
 	margin-left: 5vw;
@@ -220,14 +226,17 @@ width: 15vw;
 	background-size: cover;
 	background-position: middle;
 	background-repeat: no-repeat;
+	overflow:  hidden;
 	
 }
-#deck{
+#deckpage{
 	background-image: url("../images/deck.jpg");
 	background-color: #1E130D;
 	background-size: cover;
 	background-position: middle;
 	background-repeat: no-repeat;
+	width:  100%;
+	overflow-x: hidden;
 	
 }
 
@@ -249,12 +258,6 @@ width: 15vw;
 	display: none;
 }
 
-.cards{
-	
-
-	
-}
-
 
 .card{
 	
@@ -270,6 +273,30 @@ width: 15vw;
 	font-size: 0.8rem;
 	color: white;
 	/* text-align: center; */
+		transition:filter 1s;
+}
+
+.newcard{
+
+	transform: scale(0.8,0.8) rotate(-12deg);
+
+}
+
+.removed{
+transform: scale(0.7,0.7) rotate(90deg);
+}
+
+.attacked{
+	/* <img src="images/attaque.gif" />*/
+
+}
+
+.card:hover{
+	box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
+	
+	transform: rotate(3deg) scale(1.2,1.2);
 	
 }
 
@@ -390,18 +417,20 @@ width: 15vw;
 
 
 .cards{
+	border-radius: 25px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	height: 14rem;
-	width: 99%;
+	width: 80rem;
 	
 	
 	border:rosybrown solid 2px;
 	margin-left: 0.5vh;
 	background-color: transparent;
 	margin-bottom: 1rem;
+	margin-right: 1rem;
 	
 
 }
@@ -413,17 +442,12 @@ width: 15vw;
 	align-items: center;
 	
 }
-.cardcontainer{
-	width: 80%;
-	float: left;
-	clear: left;
-}
 
 #deck{
 	min-height: 100%;
 	width: 80%;
 	display: block;
-	margin-left: 20vh;
+	
 	margin-top: 3vh;
 }
 #deck iframe{
@@ -446,36 +470,66 @@ width: 15vw;
 	align-items: center;
 }
 
+.heropowerdeck{
+	display:  flex;
+	flex-direction: column;
+}
 .timeleft{
 	color: red;
-	background-color: blueviolet;
-	display: inline-block;
-	padding: 20px;
-	border: 1px solid yellow;
-	z-index: 1000;
+	text-shadow: 2px 2px white;
+	background-image: url("../images/icones/temps/0.png");
+	background-size: cover;
+	width:  85px;
+	height:  85px;
+	display: block;
+	padding-left: 70px;
+	padding-top: 20px;
+	z-index: 1;
+	font-size:  2.3rem;
+	margin-bottom: 1rem;
+	margin-left:  0rem;
+	transition:visibility 2s, opacity 2s; 
+
+	
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+		transition: transform 1s;  
 	
 }
+.timeleft:hover{
+	transform: scale(1.8, 1.8);
+	transition: transform 1s;  
+}
+
 
 .cardcount{
 	color: white;
 	
-	display: inline-block;
+	display: block;
 	
-	z-index: 1000;
+	z-index: 1;
 
-	margin-left: 1rem;
+	
 	background-image: url("../images/cartes/DosCarte.png");
 	background-size: cover;
-	width: 3.3rem;
-	height: 5rem;
-	padding-top: 1.6rem;
-	font-size: 1.2rem;
-	padding-left: 1.3rem;
-	margin-right: 1rem;
+	width: 2.7rem;
+	height: 4rem;
+	padding-top: 1.3rem;
+	font-size: 1.1rem;
+	padding-left: 1.1rem;
+	
+	margin-left:  1rem;
 	margin-top: 0rem;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
+	transition: transform 1s;
+}
+.cardcount:hover{
+	transform: rotate(6deg) scale(1.4,1.4);
+	transition: transform 1s;
+
 
 }
 
@@ -488,11 +542,18 @@ width: 15vw;
 	padding-top: 1.6rem;
 	text-align: center;
 	font-weight: bold;
-	z-index: 1000;
+	z-index: 1;
 	font-size: 1.5rem;
 	width: 5rem;
 	height: 3rem;
+		transition: transform 1s;  
 }
+.lifepoints:hover{
+	transform: scale(1.2, 1.2)  rotate(3deg);
+	transition: transform 1s;  
+}
+
+
 .energy{
 	color: yellow;
 	text-shadow: 2px 2px black;
@@ -502,22 +563,40 @@ width: 15vw;
 	padding-top: 1.6rem;
 	text-align: center;
 	font-weight: bold;
-	z-index: 1000;
+	z-index: 1;
 	font-size: 1.5rem;
 	width: 5rem;
 	height: 3rem;
+	transition: transform 1s;  
 }
+.energy:hover{
+	transform: scale(1.2, 1.2)  rotate(3deg);
+	transition: transform 1s;  
+}
+
 
 .heropower{
 	display: inline-block;
-	z-index: 1000;
-	width: 7rem;
+	z-index: 1;
+	width: 4rem;
 	padding-top: 20px;
-	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-left:  0.5rem;
+	transition: transform 1s;
 }
+
+.heropower:hover{
+	transform: rotate(6deg) scale(1.4,1.4);
+	transition: transform 1s;
+
+
+}
+
+
 .heropower img{
-	width: 7rem;
+	width: 4rem;
 }
+
 .details{
 	background-color: rgba(255,255,255,0.3);
 	border-radius: 50px;
@@ -525,7 +604,8 @@ width: 15vw;
 	color: white;
 	text-align: center;
 	word-wrap: break-word;
-	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-top:  -1rem;
 	
 
 }
@@ -546,8 +626,15 @@ width: 15vw;
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	
-	
+	transition: transform 1s;
 }
+.cardhand:hover{
+	transform: rotate(6deg) scale(1.4,1.4);
+	transition: transform 1s;
+
+
+}
+
 
 .endturn button{
 	margin-top: 1rem;
@@ -561,9 +648,19 @@ width: 15vw;
   cursor: pointer;
   font-size: 1.2rem;
   outline: 0 solid transparent;
-  
+transition: box-shadow 0.3s ease-in-out, transform 0.3s;  
 
 }
+
+.endturn button:hover{
+		box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
+	transform: rotate(6deg) scale(1.4,1.4);
+
+transition: box-shadow 0.3s ease-in-out, transform 0.3s;  
+}
+
 .talent{
 	background-color: rgba(0,0,0,0.6);
 	display: block;
@@ -577,7 +674,12 @@ width: 15vw;
 	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 .class img{
-	width: 15rem;
+	width: 13rem;
+	transition: transform 0.3s;  
+}
+.class img:hover{
+	transform: translate(-25px,0);
+	transition: transform 0.3s;  
 }
 
 .clicked{
@@ -588,8 +690,30 @@ width: 15vw;
 	filter: grayscale(1);
 	color: #aaa !important;
 }
+
+.taunt{
+	box-shadow: 1px 1px 5px 5px rgba(255,0,0,0.75);
+-webkit-box-shadow: 1px 1px 5px 5px rgba(255,0,0,0.75);
+-moz-box-shadow: 1px 1px 5px 5px rgba(255,0,0,0.75);
+	
+}
+.stealth{
+	transform: scale(0.9,0.9) !important;
+	border-radius: 25px;
+	color: #AAA !important;
+	margin-top:  2rem;
+}
+
+.tooexpensive{
+-webkit-filter: sepia(1);
+	filter: sepia(1);
+	color: #aaa !important;	
+}
+
 .hidden{
 	visibility: hidden;
+	opacity: 0;
+	transition:visibility 2s, opacity 2s; 
 	
 }
 .sleep .title{
@@ -599,10 +723,193 @@ width: 15vw;
 #laststatus{
 	border: 1px solid white;
 	height: 2rem;
-	width: 60rem;
+	width: 80rem;
 	clear: both;
 	background-color: rgba(255, 255, 255, 0.75);
-	margin-left: 20px;
+	
 	display: flex;
 	flex-direction: row;
+	margin-bottom:  1rem;
+}
+.rightfiller{
+	width:  700px;
+}
+
+
+
+.leftstats{
+	
+	width:  6rem;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+
+#hand{
+	background-color: rgba(0,0,0, 0.4);
+	transition: visible 0.4s linear;
+}
+
+#lobbychatbutton{
+	margin-left: 6rem;
+	width:  80rem;
+	height:  12rem;
+	z-index: 10000;
+	transition: margin-top 0.1s linear;
+
+
+}
+/*#lobbychatbutton:hover{
+	height:  24rem;
+	margin-top:  -12rem;
+	opacity: 1;
+	background-color: red;
+	z-index: 10000;
+}*/
+
+#statusline{
+	display: flex;
+}
+#help{
+	width:  6rem;
+
+
+}
+#help button{
+		margin-left: 1rem;
+		height:  2rem;
+	border: 1px solid #E3E5F3;
+	
+	padding: 4px 1vw;
+  background: #E53913;
+  border-radius: 99px;
+  box-shadow: #000000 10px 20px 20px -10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: 0 solid transparent;
+
+
+}
+
+.tooltip{
+	border:  1px solid white;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 1rem;
+	width:  20rem;
+	position: absolute;
+	font-size:  1.1rem;
+	z-index:  100000;
+	transition:visibility 2s, opacity 2s; 
+	border-radius: 15px;
+	box-shadow: #000000 10px 20px 20px 10px;
+ 
+}
+#tooltip_hand{
+	top:  35rem;
+	left:  40rem;
+
+}
+#tooltip_cards{
+top:  22rem;
+	left:  40rem;
+
+}
+#tooltip_enemycards{
+top:  3rem;
+	left:  40rem;
+
+}
+
+#tooltip_enemylife{
+top:  0.8rem;
+	left:  0.5rem;
+	width:  14rem;
+
+}
+
+#tooltip_enemyenergy{
+top:  8rem;
+	left:  0.5rem;
+	width:  18rem;
+
+}
+
+#tooltip_yourlife{
+top:  21rem;
+	left:  0.5rem;
+	width:  14rem;
+
+}
+
+#tooltip_yourenergy{
+top:  26.5rem;
+	left:  0.5rem;
+	width:  18rem;
+
+}
+#tooltip_enemyclass{
+top:  0.5rem;
+	left:  82rem;
+width:  16rem;
+}
+
+#tooltip_yourclass{
+	top:  34rem;
+	left:  86rem;
+	width:  12rem;
+}
+#tooltip_enemyheropower{
+top:  1rem;
+	left:  101rem;
+	width:  15rem;
+}
+#tooltip_yourheropower{
+	top:  33rem;
+	left:  101rem;
+	width:  16rem;
+}
+#tooltip_enemyhands{
+	top:  7rem;
+	left:  86rem;
+	width:  10rem;
+}
+#tooltip_yourhands{
+top:  41rem;
+	left:  86rem;
+	width:  10rem;	
+}
+#tooltip_enemydeck{
+top:  6rem;
+	left:  101rem;
+	width:  15rem;
+}
+#tooltip_yourdeck{
+top:  40rem;
+	left:  101rem;
+	width:  15rem;	
+}
+#tooltip_enemytimeleft{
+top:  11rem;
+	left:  101rem;
+	width:  15rem;
+
+}
+#tooltip_yourtimeleft{
+top:  45rem;
+	left:  101rem;
+	width:  15rem;
+
+}
+
+#tooltip_surrender{
+top:  61rem;
+	left:  36rem;
+	width:  16rem;
+
+}
+#tooltip_lobby{
+top:  61rem;
+	left:  10rem;
+	width:  20rem;
+
 }
