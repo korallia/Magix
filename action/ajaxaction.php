@@ -65,9 +65,29 @@
                             "NOT_ENOUGH_ENERGY" => "Not enough energy to play this card",
                             "WRONG_TURN" => "It is currently not your turn",
                             "MUST_ATTACK_TAUNT_FIRST" => "Taunt cards must be attacked first",
-                            "CARD_NOT_IN_HAND" => "The card is no longer in your hand"
-                        ];
+                            "CARD_NOT_IN_HAND" => "The card is no longer in your hand",
+                            "NOT_IN_GAME" => "You are not currently in a game",
+                            "INVALID_KEY" => "You are currently logged out. Please log in again",
+                            "INVALID_ACTION" => "Invalid action, please contact us to get this fixed",
+                            "ACTION_IS_NOT_AN_OBJECT" => "Invalid action format, please contact us to get this fixed",
+                            "BOARD_IS_FULL" => "The board is full and cannot allow other cards",
+                            "CARD_IS_SLEEPING" => "The card cannot attack or be played right now",
+                            "OPPONENT_CARD_NOT_FOUND" => "The target card was not found",
+                            "OPPONENT_CARD_HAS_STEALTH" => "The target card has stealth and cannot be attacked",
+                            "ERROR_PROCESSING_ACTION" => "The server is experiencing problems. Please try again later",
+                            "INTERNAL_ACTION_ERROR" => "The server failed to process your action. Please try again later",
+                            "HERO_POWER_ALREADY_USED" => "The hero power can only be used once per turn",
+                            "INVALID_GAME_TYPE" => "Invalid game type",
+                            "DECK_INCOMPLETE" => "Your deck is not complete. Please complete it before playing",
+                            "MAX_DEATH_THRESHOLD_REACHED" => "Your user was eliminated from the tournament",
+                            "JOINED_PVP" => "You have joined a match",
+                            "CREATED_PVP" => "You have created a match",
+                            "JOINED_TRAINING"=> "You have joined training"
+                            
 
+
+
+                    ];
                     break;
             
                     

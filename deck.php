@@ -1,4 +1,7 @@
 <?php
+
+require_once("action/CommonAction.php");
+
     $pageid = "deckpage";
     $title= "Deck Edition";
     require_once("partial/header.php");
