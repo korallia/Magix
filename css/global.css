@@ -332,11 +332,6 @@ background-image: url("../images/removedcard2.png");
 
 }
 
-.attacked{
-	/* <img src="images/attaque.gif" />*/
-
-}
-
 .card:hover{
 	box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
 -webkit-box-shadow: 1px 1px 5px 5px rgba(255,255,255,0.75);
@@ -362,46 +357,6 @@ background-image: url("../images/removedcard2.png");
 	/* text-align: center; */
 	
 }
-
-.handPlayer{
-/*	position: absolute;
-	bottom: 0;
-	margin-bottom: 1vh;
-	margin-right: 50px;
-*/
-
-}
-/*
-.playerArea1{
-	margin-top: 0.3vh;
-	min-height: 225px;
-	width: 99%;
-	display: block;
-	border:rosybrown solid 2px;
-	margin-left: 0.5vh;
-	background-color: transparent;
-
-}
-
-.playerArea2{
-	height: 14rem;
-	width: 99%;
-	display: block;
-	
-	border:rosybrown solid 2px;
-	margin-left: 0.5vh;
-	background-color: transparent;
-	margin-bottom: 4rem;
-	
-
-}
-*/
-
-
-
-
-
-
 
 .mechanics{
 	font-size: 0.8em;
