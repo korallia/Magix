@@ -1,8 +1,4 @@
 <?php
-    require_once("action/arenaaction.php");
-    $action = new ArenaAction();
-    $data =$action->execute();
-
     $pageid = "deckpage";
     $title= "Deck Edition";
     require_once("partial/header.php");

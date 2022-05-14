@@ -22,9 +22,7 @@
         if ($result == "INVALID_USERNAME_PASSWORD") {
                     $error = TRUE;
         }
-             
         else {
-	// Pour voir les informations retournées : var_dump($result);exit;
 	        $key = $result->key;
             $_SESSION["key"] = $key;
             $_SESSION["username"] = $_POST["usager"];

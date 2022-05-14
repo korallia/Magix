@@ -28,6 +28,7 @@ require_once("partial/header.php");
 <div class="menubuttons">
     <button onClick="demarrer('jouer');">Play</button>
     <button onClick="demarrer('pratique');">Practice</button>
+    <button onClick="window.location.href='stats.php';">Stats</button>
     <button onClick="window.location.href='deck.php';">Deck</button>
     <button onClick="window.location.href='index.php';">Quit</button>
 </div>

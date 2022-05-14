@@ -37,6 +37,16 @@ h2{
 	text-shadow: 2px 2px red;
 }
 
+h3{
+	color: whitesmoke;
+	text-align: center;
+	margin-top: 1vh;
+	font-size: 20px;
+	font-family: "Copperplate Gothic";
+	text-shadow: 2px 2px blue;
+}
+
+
 .clear {
 	clear:both;
 }
@@ -108,6 +118,39 @@ h2{
 	background-repeat: no-repeat;
 	
 }
+#stats{
+	background-image: url("../images/stats.jpg");
+	background-color: #1E130D;
+	background-size: cover;
+	background-position: middle;
+	background-repeat: no-repeat;
+}
+#statsection{
+	max-height: 35rem;
+	overflow-y: auto;
+	width: 60%;
+	margin: 2rem auto;
+}
+.stattable{
+	
+	background-color:rgba(0, 0, 0, 0.4);
+	border-collapse: collapse;
+	width: 100%;
+}
+.stattable th{
+	color: white;
+	background-color:rgba(0, 0, 0, 0.4);
+	margin: 0;
+}
+.stattable td{
+	color: white;
+	text-align: center;
+	border: 1px solid black;
+	margin: 0;
+	
+	
+}
+
 
 .menubuttons{
 	margin: 0px auto;
@@ -126,16 +169,16 @@ margin-left:  5vw;
 .menubuttons button, .deckmenubuttons button{
 	border: 2px solid #E3E5F3;
 	
-	margin-left: 5vw;
-	padding: 4px 3vw;
+	margin-left: 4vw;
+	padding: 4px 2.5vw;
   background: #E53913;
   border-radius: 99px;
   box-shadow: #000000 10px 20px 20px -10px;
-width: 15vw;
+width: 12vw;
   box-sizing: border-box;
   cursor: pointer;
   outline: 0 solid transparent;
-  font-size: 2vw;
+  font-size: 1.8vw;
 
 
 }

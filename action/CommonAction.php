@@ -2,6 +2,7 @@
 
     require_once("DAO/constants.php");
     session_start();
+    date_default_timezone_set('America/Toronto');
     
     abstract class CommonAction {
         protected static $VISIBILITY_PUBLIC = 0;

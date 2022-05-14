@@ -12,6 +12,16 @@
 
     
         }
+        public static function historiqueusager($user) {
+            $connection = Connection::getConnection();
+
+            $statement = $connection->prepare("SELECT * FROM historique_parties WHERE localplayer=? ORDER BY gamedate DESC");
+            $statement->execute([$user]);
+            
+            return $statement->fetchAll();
+
+    
+        }
         
 
     }
