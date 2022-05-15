@@ -1,41 +1,40 @@
 <?php
-    require_once("action/CommonAction.php");
+require_once("action/CommonAction.php");
 
-   
 
-    class IndexAction extends CommonAction {
+class IndexAction extends CommonAction {
 
-        public function __construct() {
-            parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
-        }
-        function executeAction(){
+    public function __construct() {
+        parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
+    }
 
-            $data = [];
-           $error = FALSE;
-           
-            if ( isset($_POST["usager"]) and isset($_POST["pwd"]) ){
-                $data["username"] = $_POST["usager"];
-                $data["password"] = $_POST["pwd"];
+    function executeAction() {
 
-                $result = parent::callAPI("signin", $data);
+        $data  = [];
+        $error = FALSE;
 
-        if ($result == "INVALID_USERNAME_PASSWORD") {
-                    $error = TRUE;
-        }
-        else {
-	        $key = $result->key;
-            $_SESSION["key"] = $key;
-            $_SESSION["username"] = $_POST["usager"];
-            $_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
-            header("Location: ../Magix/lobby.php");
-            exit();
+        if (isset($_POST["usager"]) and isset($_POST["pwd"])) {
+            $data["username"] = $_POST["usager"];
+            $data["password"] = $_POST["pwd"];
+
+            $result = parent::callAPI("signin", $data);
+
+            if ($result == "INVALID_USERNAME_PASSWORD") {
+                $error = TRUE;
+            } else {
+                $key                    = $result->key;
+                $_SESSION["key"]        = $key;
+                $_SESSION["username"]   = $_POST["usager"];
+                $_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
+                header("Location: ../Magix/lobby.php");
+                exit();
             }
 
         }
 
         return compact("error");
-     
+
     }
 
 
-    }
+}

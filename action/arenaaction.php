@@ -7,12 +7,12 @@ class ArenaAction extends CommonAction {
         parent::__construct(CommonAction::$VISIBILITY_MEMBER);
     }
 
-function executeAction(){
-   
+    function executeAction() {
 
-   // return compact("dialogs");
-   
-}
+
+        // return compact("dialogs");
+
+    }
 
 
 }

@@ -1,67 +1,66 @@
 <?php
 
-    require_once("DAO/constants.php");
-    session_start();
-    date_default_timezone_set('America/Toronto');
-    
-    abstract class CommonAction {
-        protected static $VISIBILITY_PUBLIC = 0;
-        protected static $VISIBILITY_MEMBER = 1;
-        protected static $VISIBILITY_MODERATOR = 2;
-        protected static $VISIBILITY_ADMINISTRATOR = 3;
-        private $pageVisibility;
+require_once("DAO/constants.php");
+session_start();
+date_default_timezone_set('America/Toronto');
 
-        public function __construct($pageVisibility) {
-            $this->pageVisibility = $pageVisibility;
+abstract class CommonAction {
+    protected static $VISIBILITY_PUBLIC        = 0;
+    protected static $VISIBILITY_MEMBER        = 1;
+    protected static $VISIBILITY_MODERATOR     = 2;
+    protected static $VISIBILITY_ADMINISTRATOR = 3;
+    private          $pageVisibility;
+
+    public function __construct($pageVisibility) {
+        $this->pageVisibility = $pageVisibility;
+    }
+
+    public function execute() {
+        if (!empty($_GET["logout"])) {
+            session_unset();
+            session_destroy();
+            session_start();
         }
 
-        public function execute() {
-            if (!empty($_GET["logout"])) {
-                session_unset();
-                session_destroy();
-                session_start();
-            }
-
-            if (empty($_SESSION["visibility"])) {
-                $_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC; // Un guest (usager non connecté)
-            }
-
-            if ($_SESSION["visibility"] < $this->pageVisibility) {
-                print_R( $_SESSION);
-                exit();
-				header("location:index.php");
-				exit;
-            }
-
-            // Design pattern (une solution reconnue pour un problème courant)
-            // Template method
-            $data = $this->executeAction();
-            return $data;
-           
+        if (empty($_SESSION["visibility"])) {
+            $_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC; // Un guest (usager non connecté)
         }
 
-        public function callAPI($service, array $data) {
-            $apiURL = "https://magix.apps-de-cours.com/api/" . $service;
-        
-            $options = array(
-                'http' => array(
-                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                    'method'  => 'POST',
-                    'content' => http_build_query($data)
-                )
-            );
-            $context  = stream_context_create($options);
-            $result = file_get_contents($apiURL, false, $context);
-        
+        if ($_SESSION["visibility"] < $this->pageVisibility) {
+            print_R($_SESSION);
+            exit();
+            header("location:index.php");
+            exit;
+        }
+
+        // Design pattern (une solution reconnue pour un problème courant)
+        // Template method
+        $data = $this->executeAction();
+        return $data;
+
+    }
+
+    public function callAPI($service, array $data) {
+        $apiURL = "https://magix.apps-de-cours.com/api/" . $service;
+
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context = stream_context_create($options);
+        $result  = file_get_contents($apiURL, false, $context);
+
 
         if (strpos($result, "<br") !== false) {
-                exit;
-            }
-            
-        return json_decode($result);
+            exit;
         }
-        
-        
 
-        protected abstract function executeAction();
+        return json_decode($result);
     }
+
+
+    protected abstract function executeAction();
+}

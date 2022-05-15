@@ -13,8 +13,7 @@ var x = 20;
 var y = 120;
 var direction = "right";
 
-
-const saveUsername = () =>{
+const saveUsername = () => {
     let input = document.querySelector("#usager");
     let username = input.value;
     localStorage.setItem("username", username);
@@ -22,52 +21,46 @@ const saveUsername = () =>{
 }
 
 const tick = () => {
-    
+
     let bat = document.querySelector("#batgif");
-    switch( direction){
+    switch (direction) {
         case "right":
-            if ( x <= 70){
+            if (x <= 70) {
                 x++;
-                bat.style.left = x  + "%";
-            }
-            else{
+                bat.style.left = x + "%";
+            } else {
                 direction = "down";
             }
-        
+
             break;
         case "down":
-            if ( y <= 700){
+            if (y <= 700) {
                 y = y + 20;
-                bat.style.top = y  + "px";
-            }
-            else{
+                bat.style.top = y + "px";
+            } else {
                 direction = "left";
             }
-        
+
             break;
         case "left":
-            if ( x >= 20){
+            if (x >= 20) {
                 x--;
-                bat.style.left = x  + "%";
-            }
-            else{
+                bat.style.left = x + "%";
+            } else {
                 direction = "up";
             }
-        
+
             break;
         case "up":
-            if ( y >= 300){
-                y= y - 20;
-                bat.style.top = y  + "px";
-            }
-            else{
+            if (y >= 300) {
+                y = y - 20;
+                bat.style.top = y + "px";
+            } else {
                 direction = "right";
             }
-        
+
             break;
 
     }
-    
     window.requestAnimationFrame(tick);
-     
 }

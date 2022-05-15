@@ -3,13 +3,12 @@ window.addEventListener("load", () => {
 
     document.querySelector("u").onmouseover = portalover;
     document.querySelector("u").onmouseout = outsideportal;
-    
+
 })
 
-
-const portalover = e =>{
+const portalover = e => {
     document.querySelector("#stats").style.backgroundImage = "url('images/stats.gif')";
 }
-const outsideportal = e =>{
+const outsideportal = e => {
     document.querySelector("#stats").style.backgroundImage = "url('images/stats.jpg')";
 }
