@@ -29,7 +29,7 @@ const tick = () => {
         const dialog = document.querySelector("#dialog");
         dialog.innerHTML = "";
 
-        const newNode = document.createElement("div"); // <li></li>
+        const newNode = document.createElement("div"); 
         newNode.classList.add("dialogcontent");
 
         const img = document.createElement("img");
@@ -37,7 +37,7 @@ const tick = () => {
         img.src = item.img;
         newNode.appendChild(img);
 
-        const textbox = document.createElement("div"); // <li></li>
+        const textbox = document.createElement("div"); 
         textbox.classList.add("dialogtext");
 
         const textNode = document.createTextNode(item.text);

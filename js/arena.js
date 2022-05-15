@@ -16,11 +16,11 @@ window.addEventListener("load", () => {
     // we create the tooltips in advance so that there is a fadein animation on first diplay
     createtooltip("tooltip_hand", "These are the cards you can play. Click them or drag them to your play area during your turn to play them. Make sure you have enough energy left!");
     createtooltip("tooltip_cards", "These are the cards you have in play. Click them, and then, a target, or drag them to a target to attack. Grayed out cards are sleeping until the next turn");
-    createtooltip("tooltip_enemycards", "These are the cards played the enemy. Taunt cards must be attacked first! ");
+    createtooltip("tooltip_enemycards", "These are the cards played by the enemy. Taunt cards must be attacked first! ");
     createtooltip("tooltip_enemylife", "The enemy life points. Drag or click here to attack their hero");
-    createtooltip("tooltip_enemyenergy", "The enemy crystals to play cards and use hero power");
+    createtooltip("tooltip_enemyenergy", "The crystals left for the enemy to play cards and use their hero power");
     createtooltip("tooltip_yourlife", "Your life points. You lose at 0");
-    createtooltip("tooltip_yourenergy", "Your crystals to play cards and use hero power. Does NOT carry from turn to turn");
+    createtooltip("tooltip_yourenergy", "Your crystals to play cards and use your hero power. The crystals do NOT carry from turn to turn");
     createtooltip("tooltip_enemyclass", "The class of your enemy. Drag or click picture to attack hero");
     createtooltip("tooltip_yourclass", "Your class. Informative only, does nothing");
     createtooltip("tooltip_enemyheropower", "Your enemy's hero power");
@@ -90,7 +90,7 @@ const showchat = e => {
     chatarea.style.marginTop = "-15.5rem";
 
     // we hide the cards in hand, since the images on the cards are created after
-    // the card, and z-index isn't enough to put it under it.
+    // the card, and z-index isn't enough to put the picture under the chat.
     let hand = document.querySelector("#hand");
     hand.style.visibility = "hidden";
 }
@@ -257,7 +257,7 @@ const update_game = data => {
             player1heropower.appendChild(image);
         }
 
-        // Count of cards and timeleft
+        // Count of cards and time left
         const player1cards = document.querySelector("#enemyCards");
         const player2cards = document.querySelector("#playerCards");
 
@@ -279,7 +279,7 @@ const update_game = data => {
             player2timeleft.innerHTML = data.values.remainingTurnTime;
 
             // each turn is 50 seconds, we have 8 images, but from low to high,
-            // so that we go 50 - time, /50 * 8
+            // so that we do 50 - time, /50 * 8
             let number = Math.floor(((50 - data.values.remainingTurnTime) / 50) * 8);
             player2timeleft.style.backgroundImage = "url('images/icones/temps/" + number + ".png')";
 
@@ -299,7 +299,7 @@ const update_game = data => {
 
             player1timeleft.innerHTML = data.values.remainingTurnTime;
             // each turn is 50 seconds, we have 8 images, but from low to high,
-            // so that we go 50 - time, /50 * 8
+            // so that we do 50 - time, /50 * 8
             let number = Math.floor(((50 - data.values.remainingTurnTime) / 50) * 8);
             player1timeleft.style.backgroundImage = "url('images/icones/temps/" + number + ".png')";
 
@@ -447,8 +447,8 @@ const update_game = data => {
 
         // The cards in the enemy's game area
         if (!drag_attacking) {
-            // Si nous attaquons via un drag and drop, il ne faut pas rafraichir
-            // les cartes enemies, sans quoi le drag and drop pourrait être corrompu.
+            // If we attack via drag and drop, we must not refresh, otherwise, the drag
+            // and drop might be corrupted
             const enemyCards = document.querySelector("#enemyCards");
             enemyCards.innerHTML = "";
             if (data.values.opponent) {
@@ -614,7 +614,7 @@ const playdrop_handler = ev => {
         player2mp -= document.querySelector("#card" + uid).getAttribute('data-cost');
         const player2energy = document.querySelector(".playerArea2 .energy");
         player2energy.innerHTML = player2mp;
-        // et ajuster les cartes
+        // and adjust the cards
         markTooExpensiveCards();
 
 
@@ -640,7 +640,8 @@ const attackdrop_handler = ev => {
             let target = ev.srcElement.getAttribute('data-uid');
             let element = ev.srcElement;
             while (target == null && element.parentNode != null) {
-                // Il est possible de faire le drop sur les mechanics, le ATK ou le HP.
+                // It's possible to drop on sub-elements, like atk, def or the image. Go back
+                // to the parents until we have a data-uid (on the card)
                 element = element.parentNode;
                 target = element.getAttribute('data-uid');
             }
@@ -691,7 +692,7 @@ const dragstart_handler = ev => {
         }
 
 
-        // The cards are too close and the image by default it scare, so the next one shows up in the drag image.
+        // The cards are too close and the image by default is square, so the next one shows up in the drag image.
         // We thus clone them, but above the page, so it doesn't show.
         var crt = ev.srcElement.cloneNode(true);
         crt.style.position = "absolute";
@@ -726,11 +727,11 @@ const create_card = (card, draggable, buyable) => {
     if (buyable && card.cost > player2mp) {
         element.classList.add("tooexpensive");
     } else if (card.state == "SLEEP" || (buyable && !yourTurn)) {
-        // too expensive has priority on sleep. But the hand is also to sleep during
+        // too expensive has priority on sleep. But the hand is also put to sleep during
         // the other player's turn. 
         element.classList.add("sleep");
     } else if (draggable) {
-        // only draggle if not too expensive and not sleeping
+        // only draggable if not too expensive and not sleeping
         element.setAttribute("draggable", "true");
         element.ondragstart = dragstart_handler
     }

@@ -10,8 +10,6 @@ class ArenaAction extends CommonAction {
     function executeAction() {
 
 
-        // return compact("dialogs");
-
     }
 
 
