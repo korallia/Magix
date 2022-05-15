@@ -6,7 +6,10 @@ window.addEventListener("load", () => {
     ajax_action("stringlookup");
 
     document.querySelector(".playerArea1 .lifepoints").onclick = e => attackplayer(e);
+    document.querySelector(".playerArea1 .class").onclick = e => attackplayer(e);
+    document.querySelector(".playerArea1 .class img").onclick = e => attackplayer(e);
     document.querySelector(".playerArea2 .heropower").onclick = e => heropower(e);
+    document.querySelector(".playerArea2 .heropower img").onclick = e => heropower(e);
     document.querySelector("#lobbychatbutton").onmouseover = e => showchat(e);
     document.querySelector("#help button").onclick = e => togglehelp(e);
 
@@ -243,6 +246,9 @@ const update_game = data => {
             let image = document.createElement("img");
             image.src = "images/icones/power/ready.png";
             player2heropower.appendChild(image);
+            document.querySelector(".playerArea2 .heropower img").onclick = e => heropower(e);
+
+
         }
         if (data.values.opponent.heroPowerAlreadyUsed) {
             player1heropower.innerHTML = '';
@@ -518,7 +524,7 @@ const playCard = e => {
     }
     let id = element.getAttribute("data-id");
     let uid = element.getAttribute("data-uid");
-    let cost = element.getAttribute("data-uid");
+    let cost = element.getAttribute("data-cost");
 
     if (id) {
         // let's not wait for the status update to reduce the energy level. Let's do it right away
