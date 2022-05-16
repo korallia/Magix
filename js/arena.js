@@ -5,11 +5,11 @@ window.addEventListener("load", () => {
     ajax_action("cardnames");
     ajax_action("stringlookup");
 
+
+
     document.querySelector(".playerArea1 .lifepoints").onclick = e => attackplayer(e);
     document.querySelector(".playerArea1 .class").onclick = e => attackplayer(e);
-    document.querySelector(".playerArea1 .class img").onclick = e => attackplayer(e);
     document.querySelector(".playerArea2 .heropower").onclick = e => heropower(e);
-    document.querySelector(".playerArea2 .heropower img").onclick = e => heropower(e);
     document.querySelector("#lobbychatbutton").onmouseover = e => showchat(e);
     document.querySelector("#help button").onclick = e => togglehelp(e);
 
@@ -214,6 +214,7 @@ const update_game = data => {
             player1class.appendChild(image);
             document.querySelector(".playerArea1 .details img").ondrop = attackdrop_handler;
             document.querySelector(".playerArea1 .details img").ondragover = dragover_handler;
+            document.querySelector(".playerArea1 .details img").onclick = e => attackplayer(e);
         }
 
 
@@ -247,8 +248,6 @@ const update_game = data => {
             image.src = "images/icones/power/ready.png";
             player2heropower.appendChild(image);
             document.querySelector(".playerArea2 .heropower img").onclick = e => heropower(e);
-
-
         }
         if (data.values.opponent.heroPowerAlreadyUsed) {
             player1heropower.innerHTML = '';
